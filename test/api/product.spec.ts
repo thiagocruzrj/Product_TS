@@ -23,6 +23,7 @@ describe("Products", () => {
       expect(response.body).toEqual(expectedResponseBody);
       expect(typeof response.body.id).toEqual("string");
       expect(new Date().getTime() - new Date(response.body.createAt).getTime()).toBeLessThan(1000);
+      expect(response.statusCode).toEqual(201);
     });
   });
 });
